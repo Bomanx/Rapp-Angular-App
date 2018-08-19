@@ -1,6 +1,14 @@
 # Rapp
+#### The Recipe App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8. It serves as a simple receipe web applicaiton and was my introduction to using Angular and Typescript.
+
+## Dependencies
+
+* Node.js (v8.11.3) - go to [NodeJS Downloads](https://nodejs.org/en/download/ ) for the latest release for your system
+* Typescript (v2.9.2) - `npm install -g typescript` and make sure the `tsc` (typescript compiler) command works
+* Bootstrap (Version 3) - on the [Bootstrap Website](http://getbootstrap.com/) go the v3.3.7 and download
+* Angular 4 - commands to install can be seen at the [Angualr CLI Website](https://cli.angular.io/)
 
 ## Development server
 
