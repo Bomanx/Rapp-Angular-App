@@ -1,7 +1,7 @@
 # Rapp
 #### The Recipe App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8. It serves as a simple receipe web applicaiton and was my introduction to using Angular and Typescript.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8. It serves as a simple receipe web applicaiton and was my introduction to using Angular and Typescript. It is inspired by [Mark Wandschneider's](https://github.com/marcwan) Learning Angular LiveLessons.
 
 ## Dependencies
 
@@ -12,7 +12,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server (this might take several seconds). Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Recipe App server
+
+Rapp uses an extremely simple HTTP server on localhost:8080 which can be found [here](https://github.com/marcwan/angularrecipeserver).  It stores recipes in a JSON file.  After cloning the git repository, run `npm install` from inside the newly cloned directory to download the dependencies in the package.json. Then inside the `app/` directory run the `run.sh` script. If you wish to skip the database refresh preformed in `run.sh`, you can simple run `node server.js` from the same directory. Recipes can be hard coded into the `recipes.json.start` file for `run.sh` or `recipes.json` for `server.js`.
 
 ## Code scaffolding
 
