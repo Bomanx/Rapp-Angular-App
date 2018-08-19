@@ -1,0 +1,52 @@
+<p *ngIf="!recipe && !loadError">
+  Loading recipe ... please wait a moment
+</p>
+
+<div *ngIf="loadError">
+  <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    {{ errorText }} - <a [routerLink]="['/recipes']">Back to recipe list</a>
+  </div>
+</div>
+
+<div *ngIf="recipe && !loadError" class='recipe panel panel-default'>
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ recipe.title }}</h3>
+  </div>
+  <div class="panel-body">
+    <div class='cover-photo-holder'>
+      <img src="{{ recipe.cover_photo ? recipe.cover_photo : '/assets/foodicon.png'}}" />
+    </div>
+    <p>{{ recipe.description }}</p>
+
+    <div>
+      <div class="dataLabel">Preparation Time:</div>
+      <div>{{ recipe.prep_time }} minutes</div>
+      <div class="dataLabel">Number Feeds: </div>
+      <div>{{ recipe.number_feeds }}</div>
+    </div>
+
+    <div class="ingredients panel panel-default">
+      <h4> Ingredients </h4>
+      <ul>
+        <li *ngFor="let ingredient of recipe.ingredients">
+            {{ ingredient.measure }} {{ ingredient.ingredient }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="instructions panel panel-default">
+      <h4> Instructions </h4>
+      <ol>
+        <li *ngFor="let instruction of recipe.instructions">
+          {{ instruction.instruction }}
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<div class="bottomButtons">
+  <button type="button" value="GoBack" class="btn btn-link" (click)="goBackButtonPressed()">Go Back</button>
+</div>

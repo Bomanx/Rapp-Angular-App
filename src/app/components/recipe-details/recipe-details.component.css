@@ -1,0 +1,33 @@
+div.cover-photo-holder img {
+    float: right;
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+}
+
+div.dataLabel {
+    float: left;
+    font-weight: bold;
+    width: 150px;
+}
+
+div.bottomButtons {
+    margin-bottom: 5px;
+}
+
+div.ingredients {
+    background-color: gainsboro;
+    float: left;
+    max-width: 25%;
+    min-width: 200px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+div.instructions {
+    float: left;
+    max-width: 50%;
+    min-width: 300px;
+    margin: 20px, 5px;
+    padding: 5px, 10px;
+}

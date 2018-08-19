@@ -1,0 +1,55 @@
+<div class="newrecipe panel panel-default">
+  <div class="panel-heading">
+    <h4>Add New Recipe</h4>
+  </div>
+  <div class="panel-body">
+    <div class="form-group">
+      <input type="text" class="form-control datastyle" [(ngModel)]="recipeInProgress.title" placeholder="Recipe Title" name="title"
+      />
+    </div>
+    <div class="form-group">
+      <textarea rows="5" class="form-control datastyle" [(ngModel)]="recipeInProgress.description" placeholder="Recipe Description"
+        name="description"></textarea>
+    </div>
+    <div class="input-group">
+      <input type="text" class="form-control newamount" [(ngModel)]="recipeInProgress.number_feeds" placeholder="Number Fed" name="number_feeds"
+      />
+      <span class="input-group-addon">people</span>
+    </div>
+    <div class="input-group">
+      <input type="text" class="form-control newamount" [(ngModel)]="recipeInProgress.prep_time" placeholder="Preparation Time"
+        name="prep_time" />
+      <span class="input-group-addon">minutes</span>
+    </div>
+    <div class="form-group">
+      <label> Ingredients </label>
+      <div class="ingredient" *ngFor="let ingredient of recipeInProgress.ingredients; let i = index">
+        <input class="ingr-input-box" type="text" [(ngModel)]="recipeInProgress.ingredients[i].ingredient" placeholder="Ingredient"
+        />
+        <input class="ingr-input-box" type="text" [(ngModel)]="recipeInProgress.ingredients[i].measure" placeholder="Measure" />
+        <a (click)="removeIngredientAtIndex(i)" class="removeLink">Remove</a>
+      </div>
+      <div>
+        <button type="button" value="Add" class="btn btn-secondary" (click)="addIngredientPressed()">Add</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label> Instructions </label>
+      <div class="instruction" *ngFor="let instruction of recipeInProgress.instructions; let i = index">
+        <input class="instruc-input-box" type="text" [(ngModel)]="recipeInProgress.instructions[i].instruction" placeholder="Instruction"
+        />
+        <a (click)="removeInstructionAtIndex(i)" class="removeLink">Remove</a>
+      </div>
+      <div>
+        <button type="button" value="Add" class="btn btn-secondary" (click)="addInstructionPressed()">Add</button>
+      </div>
+    </div>
+    <div class="input-group">
+      <button type="button" value="AddRecipe" class="btn btn-primary" (click)="addRecipeClicked()">Add Recipe</button>
+    </div>
+  </div>
+</div>
+
+<div class="topButtons">
+    <button type="button" value="GoBack" class="btn btn-link" (click)="goBackButtonPressed()">Go Back</button>
+</div>

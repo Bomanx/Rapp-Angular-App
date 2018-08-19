@@ -1,0 +1,27 @@
+div.topButtons {
+    margin-bottom: 5px;
+}
+
+div.newrecipe {
+    width: 500px;
+    margin-left: 10px;
+}
+
+.datastyle {
+    width: 460px;
+}
+
+div.input-group {
+    margin: 10px 0;
+}
+
+.ingr-input-box {
+    width: 40%;
+}
+
+.removeLink {
+    cursor: pointer;
+    font-size: 80;
+    padding-left: 5px;
+}
+

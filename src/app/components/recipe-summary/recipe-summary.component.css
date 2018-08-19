@@ -1,0 +1,36 @@
+div.cover-photo-holder {
+    float: right;
+}
+
+div.cover-photo-holder img {
+    float: right;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+}
+
+div.zoom {
+    font-size: 75%;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.recipe {
+    float: left;
+    width: 97%;
+    margin: 10px 0;
+}
+
+div.dataLabel {
+    float: left;
+    font-weight: bold;
+    width: 150px;
+}
+
+@media (min-width: 800px) {
+    .recipe {
+        width: 500px;
+        margin: 10px 10px;
+    }
+}

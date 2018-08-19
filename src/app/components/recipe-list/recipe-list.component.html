@@ -1,0 +1,29 @@
+<title>Rapp</title>
+<div [ngClass]="currentClasses">
+  <div class="top-btns btn-group" role="group" aria-label="Menu Buttons">
+    <!--<button type="button" value="AddNewRecipe" class="btn btn-success" (click)="addNewRecipePressed()">Add New Recipe</button> -->
+    <button type="button" value="ToggleDarkBG" class="btn btn-space" (click)="toggleBackground()">Background</button>
+    <button type="button" value="ToggleFontSize" class="btn btn-space" (click)="toggleFontSize()">Font Size</button>
+  </div>
+
+  <h1 [style.font-size]="fontSize">Rapp: The Simple Recipe App</h1>
+
+  <p *ngIf="!recipesLoaded && !loadError">
+    Loading Recipes ... Please wait a moment
+  </p>
+  <p *ngIf="recipesLoaded && !loadError && (!recipes || !recipes.length)">
+    There are no recipes! What Gives? :(
+  </p>
+
+  <div *ngIf="loadError">
+    <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      {{ errorText }} - <a [routerLink]="['/recipes']">Back to recipe list</a>
+    </div>
+  </div>
+
+  <div *ngFor="let recipe of recipes">
+    <app-recipe-summary [recipe]="recipe" (userClick)="userClickedOnRecipe($event)"></app-recipe-summary>
+  </div>
+</div>
